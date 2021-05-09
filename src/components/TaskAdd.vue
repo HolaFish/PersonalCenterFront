@@ -172,7 +172,7 @@ import TimePicker from "./TimePicker.vue";
 import AccountSelecotr from "./AccountSelector.vue";
 import UserChip from "./UserChip.vue";
 import qs from "qs";
-import store from "../store";
+import {store} from "../store";
 export default {
   components: { DatePicker, TimePicker, AccountSelecotr, UserChip },
   props: ["isShow", "startDate", "startTime", "endDate", "endTime"],

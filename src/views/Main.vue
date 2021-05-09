@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import store from "../store";
+import {store} from "../store";
 export default {
   created() {
     store.getCurrentUser((user) => (this.user = user));

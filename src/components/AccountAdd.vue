@@ -127,16 +127,12 @@
 import ImageUpload from "vue-image-crop-upload/upload-2";
 import qs from "qs";
 import pinyin from "js-pinyin";
+import {store} from "../store"
 export default {
   props: ["isOpen", "department"],
   components: { ImageUpload },
   created(){
-    let _this = this;
-    this.axios.get('/dictionary/subItems/of/Position').then(rep => {
-      if (200 == rep.code){
-        _this.positions = rep.data;
-      }
-    })
+    store.getPositions(positions => this.positions = positions);
   },
   data() {
     return {

@@ -341,6 +341,7 @@ import CompanyAdd from "../components/CompanyAdd.vue";
 import CompanyEdit from "../components/CompanyEdit.vue";
 import AskDialog from "../components/AskDialog.vue";
 import ChangePassword from "../components/ChangePassword"
+import {store} from "../store"
 export default {
   components: {
     BusinessCard,
@@ -354,12 +355,7 @@ export default {
     ChangePassword
   },
   created(){
-    let _this = this;
-    this.axios.get('/dictionary/subItems/of/Position').then(rep => {
-      if (200 == rep.code){
-        _this.positions = rep.data;
-      }
-    })
+    store.getPositions(positions => this.positions = positions);
   },
   data: () => ({
     active: [],

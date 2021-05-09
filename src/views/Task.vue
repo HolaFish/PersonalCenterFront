@@ -116,7 +116,7 @@
 
 <script>
 import TaskDetail from "../components/TaskDetail.vue";
-import store from "../store";
+import {store} from "../store";
 export default {
   components: { TaskDetail },
   created() {

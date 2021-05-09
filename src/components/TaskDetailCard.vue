@@ -108,7 +108,7 @@
 
 <script>
 import UserChip from './UserChip';
-import store from '../store';
+import {store} from '../store';
 export default {
   components:{UserChip},
   props: ["event"],
