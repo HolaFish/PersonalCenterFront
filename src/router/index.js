@@ -25,18 +25,23 @@ const routes = [
       },
       {
         path:'/timeLine',
-        naem:'TimeLine',
+        name:'TimeLine',
         component: ()=> import('../views/TimeLine.vue')
       },
       {
         path:'/account',
-        naem:'Account',
+        name:'Account',
         component: ()=> import('../views/Account.vue')
       },
       {
         path:'/dictionary',
-        naem:'Dictionary',
+        name:'Dictionary',
         component: ()=> import('../views/Dictionary.vue')
+      },
+      {
+        path:'/finance/summary',
+        name:'Finance_Summary',
+        component: ()=> import('../views/Finance/Summary.vue')
       }
     ]
   },

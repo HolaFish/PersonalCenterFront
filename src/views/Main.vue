@@ -24,36 +24,50 @@
       </v-list>
       <v-divider></v-divider>
       <v-list nav dense>
-        <v-list-item link to="MyTask">
+        <v-list-item link to="/MyTask">
           <v-list-item-icon>
             <v-icon>mdi-calendar-account</v-icon>
           </v-list-item-icon>
           <v-list-item-title>MyTask</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="Task">
+        <v-list-item link to="/Task">
           <v-list-item-icon>
             <v-icon>mdi-calendar-clock</v-icon>
           </v-list-item-icon>
           <v-list-item-title>TaskScreen</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="TimeLine">
+        <v-list-item link to="/TimeLine">
           <v-list-item-icon>
             <v-icon>mdi-timeline</v-icon>
           </v-list-item-icon>
           <v-list-item-title>TimeLine</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="Account">
+        <v-list-item link to="/Account">
           <v-list-item-icon>
             <v-icon>mdi-account-supervisor</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Account</v-list-item-title>
         </v-list-item>
-        <v-list-item link to="Dictionary">
+        <v-list-item link to="/Dictionary">
           <v-list-item-icon>
             <v-icon>mdi-book-open</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Dictionary</v-list-item-title>
         </v-list-item>
+        <v-list-group>
+          <template v-slot:activator>
+            <v-list-item-icon>
+              <v-icon>mdi-currency-cny</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Finance</v-list-item-title>
+          </template>
+          <v-list-item link to="/Finance/Summary">
+            <v-list-item-icon>
+              <v-icon>mdi-finance</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Summary</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
     <v-main>
@@ -68,7 +82,7 @@
 </template>
 
 <script>
-import {store} from "../store";
+import { store } from "../store";
 export default {
   created() {
     store.getCurrentUser((user) => (this.user = user));
@@ -87,11 +101,11 @@ export default {
       return this.user.userName.substr(0, 1);
     },
   },
-  methods:{
-    logout(){
-      this.axios.get('/auth/logout')
-    }
-  }
+  methods: {
+    logout() {
+      this.axios.get("/auth/logout");
+    },
+  },
 };
 </script>
 

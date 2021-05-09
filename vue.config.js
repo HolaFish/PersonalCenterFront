@@ -1,6 +1,8 @@
 module.exports = {
   transpileDependencies: [
-    'vuetify'
+    'vuetify',
+    'vue-echarts',
+    'resize-detector'
   ],
   publicPath: '/pc/',
   chainWebpack: (config) => {
