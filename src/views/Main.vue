@@ -24,6 +24,12 @@
       </v-list>
       <v-divider></v-divider>
       <v-list nav dense>
+        <v-list-item link to="/plan">
+          <v-list-item-icon>
+            <v-icon>mdi-calendar-account</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Plan</v-list-item-title>
+        </v-list-item>
         <v-list-item link to="/MyTask">
           <v-list-item-icon>
             <v-icon>mdi-calendar-account</v-icon>

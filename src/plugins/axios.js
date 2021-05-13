@@ -36,7 +36,7 @@ _axios.interceptors.response.use(
   function(error) {
     // Do something with response error
     if (401 == error.response.status){
-      router.push("Login");
+      router.push("/Login");
     }
     return Promise.reject(error);
   }

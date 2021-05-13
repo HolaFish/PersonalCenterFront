@@ -28,18 +28,18 @@
     </v-row>
     <v-row>
       <v-col cols="12" md="6">
-          <div id="chart1" class="charts"></div>
+        <div id="chart1" class="charts"></div>
       </v-col>
-      <v-col cols="12" md="6"> 
-          <div id="chart2" class="charts"></div>
+      <v-col cols="12" md="6">
+        <div id="chart2" class="charts"></div>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12" md="6">
-          <div id="chart3" class="charts"></div>
+        <div id="chart3" class="charts"></div>
       </v-col>
-      <v-col cols="12" md="6"> 
-          <div id="chart4" class="charts"></div>
+      <v-col cols="12" md="6">
+        <div id="chart4" class="charts"></div>
       </v-col>
     </v-row>
   </v-app>
@@ -51,11 +51,15 @@ import * as echarts from "echarts";
 export default {
   data() {
     return {
-        chart1:null,
-        chart2:null,
-        chart3:null,
-        chart4:null,
+      chart1: null,
+      chart2: null,
+      chart3: null,
+      chart4: null,
       option1: {
+        title: {
+          text: "资产",
+        },
+        tooltip: {},
         xAxis: {
           type: "category",
           data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -71,6 +75,10 @@ export default {
         ],
       },
       option2: {
+        title: {
+          text: "负债",
+        },
+        tooltip: {},
         xAxis: {
           type: "category",
           data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -86,6 +94,10 @@ export default {
         ],
       },
       option3: {
+        title: {
+          text: "收入",
+        },
+        tooltip: {},
         xAxis: {
           type: "category",
           data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -101,6 +113,10 @@ export default {
         ],
       },
       option4: {
+        title: {
+          text: "支出",
+        },
+        tooltip: {},
         xAxis: {
           type: "category",
           data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -117,24 +133,24 @@ export default {
       },
     };
   },
-  mounted(){
-      this.chart1 = echarts.init(document.getElementById('chart1'));
-      this.chart1.setOption(this.option1);
+  mounted() {
+    this.chart1 = echarts.init(document.getElementById("chart1"));
+    this.chart1.setOption(this.option1);
 
-      this.chart2 = echarts.init(document.getElementById('chart2'));
-      this.chart2.setOption(this.option2);
+    this.chart2 = echarts.init(document.getElementById("chart2"));
+    this.chart2.setOption(this.option2);
 
-      this.chart3 = echarts.init(document.getElementById('chart3'));
-      this.chart3.setOption(this.option3);
+    this.chart3 = echarts.init(document.getElementById("chart3"));
+    this.chart3.setOption(this.option3);
 
-      this.chart4 = echarts.init(document.getElementById('chart4'));
-      this.chart4.setOption(this.option4);
-  }
+    this.chart4 = echarts.init(document.getElementById("chart4"));
+    this.chart4.setOption(this.option4);
+  },
 };
 </script>
 
 <style>
-.charts{
-    min-height: 300px;
+.charts {
+  min-height: 300px;
 }
 </style>
